@@ -275,5 +275,5 @@ func (d *Device) Disconnect() error {
 }
 
 func (d *Device) RSSI() int16 {
-	return d.Properties.RSSI
+	return d.device.Properties.RSSI
 }
