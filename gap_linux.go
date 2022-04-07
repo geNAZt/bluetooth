@@ -274,6 +274,6 @@ func (d *Device) Disconnect() error {
 	return d.device.Disconnect()
 }
 
-func (d *Device) RSSI() (int16, error) {
-	return d.device.GetRSSI()
+func (d *Device) RSSI() int16 {
+	return d.Properties.RSSI
 }
