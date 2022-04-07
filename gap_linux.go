@@ -1,3 +1,4 @@
+//go:build !baremetal
 // +build !baremetal
 
 package bluetooth
@@ -271,4 +272,8 @@ func (a *Adapter) Connect(address Addresser, params ConnectionParams) (*Device, 
 // wait until the connection is fully gone.
 func (d *Device) Disconnect() error {
 	return d.device.Disconnect()
+}
+
+func (d *Device) RSSI() (int16, error) {
+	return d.device.GetRSSI()
 }
